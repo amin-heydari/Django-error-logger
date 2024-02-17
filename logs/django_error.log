@@ -1,0 +1,60 @@
+
+
+-----
+ERROR 2024-02-17 13:13:33 custom_exception_handler (<class 'Exception'>, Exception('this is the error'), <traceback object at 0x000001F170767940>)
+Standard Django error: {'error': 'this is the error', 'request_path': '/error/', 'request_method': 'GET', 'request_body': '', 'user': 'Anonymous User', 'query_params': {}, 'headers': {'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Sec-Ch-Ua': '"Not A(Brand";v="99", "Microsoft Edge";v="121", "Chromium";v="121"', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Ch-Ua-Platform': '"Windows"', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-User': '?1', 'Sec-Fetch-Dest': 'document', 'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'en-US,en;q=0.9'}}
+Traceback (most recent call last):
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amin\Desktop\DjangoLogging\error\views.py", line 8, in error_view
+    raise Exception("this is the error")
+Exception: this is the error
+
+
+-----
+ERROR 2024-02-17 13:13:33 log None
+Internal Server Error: /error/
+
+
+-----
+ERROR 2024-02-17 13:13:33 basehttp None
+"GET /error/ HTTP/1.1" 500 576
+
+
+-----
+ERROR 2024-02-17 13:15:16 custom_exception_handler (<class 'Exception'>, Exception('This is a DRF API view error.'), <traceback object at 0x000001F17095E340>)
+Standard Django error: {'error': 'This is a DRF API view error.', 'request_path': '/error/api/', 'request_method': 'POST', 'request_body': '_content_type=application%2Fjson&_content=test', 'user': 'Anonymous User', 'query_params': {}, 'headers': {'Content-Length': '46', 'Content-Type': 'application/x-www-form-urlencoded', 'Host': '127.0.0.1:8000', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'Sec-Ch-Ua': '"Not A(Brand";v="99", "Microsoft Edge";v="121", "Chromium";v="121"', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Ch-Ua-Platform': '"Windows"', 'Upgrade-Insecure-Requests': '1', 'Origin': 'http://127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-User': '?1', 'Sec-Fetch-Dest': 'document', 'Referer': 'http://127.0.0.1:8000/error/api/', 'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'en-US,en;q=0.9'}}
+Traceback (most recent call last):
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\amin\Desktop\DjangoLogging\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\amin\Desktop\DjangoLogging\error\views.py", line 13, in post
+    raise Exception("This is a DRF API view error.")
+Exception: This is a DRF API view error.
+
+
+-----
+ERROR 2024-02-17 13:15:16 log None
+Internal Server Error: /error/api/
+
+
+-----
+ERROR 2024-02-17 13:15:16 basehttp None
+"POST /error/api/ HTTP/1.1" 500 576
